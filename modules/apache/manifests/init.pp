@@ -17,11 +17,21 @@ class apache {
 
   file { '/var/www/html/index.html':
     ensure => 'file',
-    source => 'puppet:///modules/apache/index.html'}
+    source => 'puppet:///modules/apache/index.html'
+  }
   
+  file {'/etc/httpd/conf/httpd.conf':
+    ensure  => file,
+    owner   => 'root',
+    group   => 'root',
+    require =>  Package['httpd'],
+  }
+
+
   service {'httpd':
-      ensure => 'running',
-      enable => 'true',
+      ensure    => 'running',
+      enable    => 'true',
+      subscribe =>  File['/etc/httpd/conf/httpd.conf'],
     }
 
 }
