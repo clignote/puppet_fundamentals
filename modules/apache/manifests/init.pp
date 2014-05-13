@@ -21,7 +21,7 @@ class apache {
 
   file { '/var/www/html/index.html':
     ensure => 'file',
-    source => 'puppet:///modules/apache/index.html'
+    content => template('/apache/index.html.erb'),
   }
   
   file {'/etc/httpd/conf/httpd.conf':
