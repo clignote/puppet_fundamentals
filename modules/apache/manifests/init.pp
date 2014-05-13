@@ -21,7 +21,7 @@ class apache {
 
   file { '/var/www/html/index.html':
     ensure => 'file',
-    content => template('/apache/index.html.erb'),
+    content => template('apache/index.html.erb'),
   }
   
   file {'/etc/httpd/conf/httpd.conf':
