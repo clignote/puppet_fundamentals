@@ -1,8 +1,14 @@
 <html>
+  <head>
+    <title>Dynamically generated content from Puppet</title>
+  </head>
   <body>
     <%= @kernel %>
-    Adieu salut!
-    <%= @operatingsystem %>
-    <%= @uptime %>
+    Adieu salut!<br>
+    Bienvenu sur <%=  @hostname %> qui tourne sous <%= @operatingsystem %>
+    et depuis:<%= @uptime %>
+    <br>
+    <%= doctype %>
+    <br>
   </body>
 </html>

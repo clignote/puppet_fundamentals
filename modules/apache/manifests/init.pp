@@ -25,7 +25,7 @@ class apache {
   }
   
   file {'/etc/httpd/conf/httpd.conf':
-    ensure  => file,
+    ensure  => 'file',
     owner   => 'root',
     group   => 'root',
     require =>  Package['httpd'],

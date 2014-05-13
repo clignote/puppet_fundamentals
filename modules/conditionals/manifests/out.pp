@@ -1,4 +1,4 @@
-class ::conditionals::in {
+class conditionals::out {
 
   file{'/tmp/os':
       ensure  => 'file',
